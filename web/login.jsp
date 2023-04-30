@@ -4,6 +4,7 @@
     Author     : ishra
 --%>
 
+<%@page import="com.ecourse.management.entities.Message"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,33 +32,48 @@
                                 <span style="display:block;" class="fa fa-user-circle fa-3x"></span>
 
                                 Login here
+
                             </div>
+                            <%
+                                Message m = (Message) session.getAttribute("msg");
+
+                                if (m != null) {
+                            %>
+
+                            <div class="alert <%= m.getCssClass() %>" role="alert">
+                                <%= m.getContent()  %>
+                            </div>
+                            <%
+                                session.removeAttribute("msg");
+                                }
+
+                            %>
 
                             <div class="card-body">
-                                <form>
+                                <form action="Login" method="POST">
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" name = "username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                                        <input type="text" required name = "username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
+                                    <div class="form-group" >
+                                        <label for="password" required >Password</label>
                                         <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="role">Select Role</label>
-                                        <select class="form-control" id="role" name="role">
+                                        <select required class="form-control" id="role" name="role">
                                             <option disabled selected>Select Role</option>
                                             <option value="student">Student</option>
                                             <option value="teacher">Teacher</option>
                                             <option value="admin">Admin</option>
-                                            
+
                                         </select>
                                     </div>
 
                                     <button type="submit" class="btn btn-dark">Submit</button>
-                                    
+
                                     <p>
                                         Not a member yet? <a href="register.jsp" class="badge badge-secondary">Sign Up</a>
 

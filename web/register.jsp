@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,32 +36,32 @@
                             Register here
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form id="reg-form" action="Register" method="POST">
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" name = "username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="firstName">First Name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                                        <input name="first_name" type="text" class="form-control" id="firstName" placeholder="Enter first name">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+                                        <input type="text" class="form-control" name="last_name" id="lastName" placeholder="Enter last name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email address</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password">
                                 </div>
                                 <div class="form-group">
                                     <label for="role">Select Role</label>
-                                    <select class="form-control" id="role" name="role">
+                                    <select class="form-control" id="role" name="user_role">
                                         <option disabled selected>Select Role</option>
                                         <option value="student">Student</option>
                                         <option value="teacher">Teacher</option>
@@ -70,7 +71,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phoneNumber">Phone Number</label>
-                                    <input type="text" name = "phoneNumber" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Enter phone number">
+                                    <input type="text" name = "phone_number" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Enter phone number">
                                 </div>
 
                                 <div class="form-group">
@@ -78,8 +79,14 @@
                                     <input type="text" name = "address" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter phone number">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary bg-dark">Submit</button>
-                                
+                                <div class="container text-center" id="loader" style="display:none;">
+                                    <span class="fa fa-spinner fa-4x fa-spin"></span>
+                                    <h4>Please wait</h4>
+
+
+                                </div>
+                                <button id="register-btn"type="submit" class="btn btn-primary bg-dark">Submit</button>
+
                                 <p>
                                     Already a member? <a href="login.jsp" class="badge badge-secondary">Sign In</a>
 
@@ -101,7 +108,57 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/myjs.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                console.log("loaded");
 
+                $('#reg-form').on('submit', function (event) {
+                    event.preventDefault();
+
+                    let form = new FormData(this);
+
+                    $("#register-btn").hide();
+                    $("#loader").show();
+                    // sending the form to register servlet
+
+                    $.ajax({
+                        url: "Register",
+                        type: "POST",
+                        data: form,
+                        success: function (data, textStatus, jqXHR) {
+                            console.log(data);
+                            $("#register-btn").show();
+                            $("#loader").hide();
+
+                            if (data.trim() === 'done')
+                            {
+                                swal({
+                                    title: "Success!",
+                                    text: "Registration is complete!",
+                                    icon: "success",
+                                    button: "Sign In Now",
+
+                                }).then((value) => {
+                                    window.location = "login.jsp"
+                                });
+                            } else {
+                                swal("You are already registered", "Try again with a different username and email.", "error");
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+                            $("#register-btn").show();
+                            $("#loader").hide();
+                            swal("Something went wrong", "Try again.", "error");
+                        },
+                        processData: false,
+                        contentType: false
+                    });
+                });
+
+            })
+        </script>
 
     </body>
 </html>
