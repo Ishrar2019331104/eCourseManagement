@@ -12,6 +12,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>com.ecourse.management.servlets.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateCourse</servlet-name>
+        <servlet-class>com.ecourse.management.servlets.CreateCourse</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateCourse</servlet-name>
+        <url-pattern>/CreateCourse</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

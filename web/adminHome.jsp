@@ -64,7 +64,7 @@
                 <div class="col-md-6 text-center">
                     <h3 class="display-4">eCourseManagement</h3>
                     <br>
-                    <a href="#"class="btn btn-outline-dark btn-lg"><span class="fa fa-plus-square"></span> Create Course</a>
+                    <a href="createCourse.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-plus-square"></span> Create Course</a>
                     <a href="#"class="btn btn-outline-dark btn-lg"><span class="fa fa-upload"></span> Assign Course</a>
                 </div>
             </div>
