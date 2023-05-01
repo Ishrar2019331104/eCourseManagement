@@ -96,7 +96,7 @@
                 let form = new FormData(this);
 
 
-                // sending the form to register servlet
+                // sending the form to createCourse servlet
 
                 $.ajax({
                     url: "CreateCourse",
