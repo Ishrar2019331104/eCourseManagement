@@ -43,7 +43,7 @@ public class Logout extends HttpServlet {
             HttpSession session = request.getSession();
             session.removeAttribute("currentUser");
             
-            Message m = new Message("Logout Successfull.","success","alert-success");
+            Message m = new Message("You have been successfully logged out.","success","alert-success");
             
             session.setAttribute("msg", m);
             

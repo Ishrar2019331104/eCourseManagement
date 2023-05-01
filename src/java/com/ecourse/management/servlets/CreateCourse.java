@@ -10,6 +10,7 @@ import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ishra
  */
+@MultipartConfig
 public class CreateCourse extends HttpServlet {
 
     /**
@@ -34,12 +36,7 @@ public class CreateCourse extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CreateCourse</title>");
-            out.println("</head>");
-            out.println("<body>");
+           
 
             // fetching all form data
             String courseCode = request.getParameter("courseCode");
@@ -62,12 +59,11 @@ public class CreateCourse extends HttpServlet {
                 // save successful
                 out.println("done");
             } else {
-                out.println("course exists.");
+                out.println("error");
             }
            
             
-            out.println("</body>");
-            out.println("</html>");
+            
         }
     }
 

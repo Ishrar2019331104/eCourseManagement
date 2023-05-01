@@ -19,9 +19,11 @@
 
     </head>
     <body>
-        <!--navbar-->
+       
         
+        <!--navbar-->
 
+        <%@include file="normal_navbar.jsp" %>
 
         <!--main-->
 

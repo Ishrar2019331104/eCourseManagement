@@ -19,7 +19,9 @@
     </head>
     <body>
 
-        
+        <!--navbar-->
+
+        <%@include file="normal_navbar.jsp" %>
 
         <main class="d-flex align-items-center" style="height:100vh;">
             <div class="container">

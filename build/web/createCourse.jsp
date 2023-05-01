@@ -32,11 +32,11 @@
 
                     <div class="card">
                         <div class="card-header bg-dark text-white text-center">
-                            <span style="display:block;" class="fa fa-plus-square fa-3x"></span>
-                            Create Course
+                            <span style="display:block;" class="fa fa-plus fa-3x"></span>
+                            Add New Course
                         </div>
                         <div class="card-body">
-                            <form action="CreateCourse" method="POST">
+                            <form id="course-form" action="CreateCourse" method="POST">
                                 <div class="form-group">
                                     <label for="courseCode">Course Code</label>
                                     <input name="courseCode" type="text" class="form-control" id="courseCode" placeholder="Enter course code" required>
@@ -57,8 +57,14 @@
                                     <label for="semester">Semester</label>
                                     <input type="text" name="semester" class="form-control" id="semester" placeholder="Enter semester (in the order - 1,2)" required>
                                 </div>
-                               
-                                <button type="submit" class="btn btn-primary bg-dark">Create</button>
+                                <div class="container text-center" id="create-loader" style="display:none;">
+                                    <span class="fa fa-spinner fa-4x fa-spin"></span>
+                                    <h4>Please wait</h4>
+
+
+                                </div>
+                                <button id="create-btn" type="submit" class="btn btn-primary bg-dark">Create</button>
+                                <a href="adminHome.jsp" class="btn btn-primary bg-dark text-white">Cancel</a>
                             </form>
                         </div>
                     </div>
@@ -78,6 +84,75 @@
         <script src="js/myjs.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
+        <script>
+
+
+            $('#course-form').on('submit', function (event) {
+                event.preventDefault();
+
+                $("#create-btn").hide();
+                $("#create-loader").show();
+
+                let form = new FormData(this);
+
+
+                // sending the form to register servlet
+
+                $.ajax({
+                    url: "CreateCourse",
+                    type: "POST",
+                    data: form,
+                    success: function (data, textStatus, jqXHR) {
+                        console.log(data);
+                        $("#create-btn").show();
+                        $("#create-loader").hide();
+                        if (data.trim() === 'done')
+                        {
+                            swal("Course created successfully!", {
+                                icon: "success",
+                                buttons: {
+                                    cancel: "Go to Home",
+                                    catch : {
+                                        text: "Add More",
+                                        value: "catch",
+                                    },
+
+                                },
+                            })
+                                    .then((value) => {
+                                        switch (value) {
+
+
+                                            case "catch":
+                                                window.location = "createCourse.jsp"
+                                                break;
+
+                                            default:
+                                                window.location = "adminHome.jsp";
+
+                                        }
+                                    });
+                        } else {
+                            swal("Course already exists", "Try again.", "error");
+                        }
+
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+
+                        $("#create-btn").show();
+                        $("#create-loader").hide();
+                        swal("Something went wrong", "Try again.", "error");
+
+
+                    },
+                    processData: false,
+                    contentType: false
+                });
+            });
+
+
+        </script>
 
     </body>
 </html>
