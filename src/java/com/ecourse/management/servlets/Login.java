@@ -36,14 +36,9 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Login</title>");            
-            out.println("</head>");
-            out.println("<body>");
+           
             
-            // login
+            
             
             // fetching username and password from request
             
@@ -55,7 +50,7 @@ public class Login extends HttpServlet {
             // authenticating from UserDao
             
             UserDao dao = new UserDao(ConnectionProvider.getConnection());
-            User user = dao.getUserByUsernameAndPassword(username, password);
+            User user = dao.getUserByUsernameAndPassword(username, password, user_role);
             
             
            if(user==null){
@@ -71,19 +66,21 @@ public class Login extends HttpServlet {
                // login successfull
                HttpSession session = request.getSession();
                session.setAttribute("currentUser", user);
+               
+               // redirecting users to different pages based on their roles
+               
                if(user.getUser_role().equals("admin")) {
-                   response.sendRedirect("adminHome.jsp"); // this based on different roles.
+                   response.sendRedirect("adminHome.jsp"); 
                } else if(user.getUser_role().equals("teacher")) {
-                   response.sendRedirect("teacherHome.jsp"); // this based on different roles.
+                   response.sendRedirect("teacherHome.jsp"); 
                } else {
-                   response.sendRedirect("studentHome.jsp"); // this based on different roles.
+                   response.sendRedirect("studentHome.jsp"); 
                }
                
            }
            
             
-            out.println("</body>");
-            out.println("</html>");
+            
         }
     }
 

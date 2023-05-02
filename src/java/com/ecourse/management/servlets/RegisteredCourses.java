@@ -4,20 +4,23 @@
  */
 package com.ecourse.management.servlets;
 
-import com.ecourse.management.entities.Message;
+import com.ecourse.management.entities.User;
+import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ishra
  */
-public class Logout extends HttpServlet {
+public class RegisteredCourses extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,19 +36,30 @@ public class Logout extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           
             
-            // removing user from session
-            
-            HttpSession session = request.getSession();
-            session.removeAttribute("currentUser");
-            
-            Message m = new Message("You have been successfully logged out.","success","alert-success");
-            
-            session.setAttribute("msg", m);
-            
-            response.sendRedirect("login.jsp");
-            
+
+            try {
+
+                Connection con = ConnectionProvider.getConnection();
+                HttpSession session = request.getSession();
+
+                User user = (User) session.getAttribute("currentUser");
+
+                String username = user.getUsername();
+                 // querying the courses of a student
+                String query = String.format("SELECT * FROM enrolledcourses, course where enrolledcourses.courseCode = course.courseCode and username = '%s'", username);
+
+                
+                ResultSet data = con.createStatement().executeQuery(query);
+                
+                request.setAttribute("tableData", data);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("registeredCourses.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
            
         }
     }

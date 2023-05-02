@@ -4,9 +4,13 @@
  */
 package com.ecourse.management.servlets;
 
-import com.ecourse.management.entities.Message;
+
+import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ishra
  */
-public class Logout extends HttpServlet {
+public class EnrolledStudents extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,18 +38,27 @@ public class Logout extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
            
-            
-            // removing user from session
-            
-            HttpSession session = request.getSession();
-            session.removeAttribute("currentUser");
-            
-            Message m = new Message("You have been successfully logged out.","success","alert-success");
-            
-            session.setAttribute("msg", m);
-            
-            response.sendRedirect("login.jsp");
-            
+
+            try {
+
+                Connection con = ConnectionProvider.getConnection();
+                HttpSession session = request.getSession();
+
+                String courseCode = request.getParameter("courseCode");
+                
+                // querying the assigned courses of a teacher
+                String query = String.format("SELECT * FROM enrolledcourses, user where user.username = enrolledCourses.username and courseCode = '%s'", courseCode);
+
+                ResultSet data = con.createStatement().executeQuery(query);
+
+                request.setAttribute("tableData", data);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("enrolledStudents.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
            
         }
     }

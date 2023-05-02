@@ -134,7 +134,7 @@
                                         }
                                     });
                         } else {
-                            swal("Course already exists", "Try again.", "error");
+                            swal("Course already exists.", "Please choose a different course to create.", "error");
                         }
 
 

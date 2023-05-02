@@ -36,9 +36,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about.jsp"><span class="fa fa-info-circle"></span>  About Us <span class="sr-only">(current)</span></a>
-                    </li>
+
 
                 </ul>
 
@@ -58,6 +56,8 @@
         </nav>
         <!--end of navbar-->
 
+        
+        <!--main-->
 
 
         <div class="container">
@@ -65,8 +65,10 @@
                 <div class="col-md-6 text-center">
                     <h3 class="display-4">eCourseManagement</h3>
                     <br>
-                    <a href="#"class="btn btn-outline-dark btn-lg"><span class="fa fa-pencil-square-o"></span> Course Registration</a>
-                    <a href="#"class="btn btn-outline-dark btn-lg"><span class="fa fa-book"></span> Registered Courses</a>
+                    <a href="courseRegistration.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-pencil-square-o"></span> Course Registration</a>
+                    <form action="RegisteredCourses" method="POST" style="display: inline;">
+                        <button class="btn btn-outline-dark btn-lg"><span class="fa fa-book"></span> Registered Courses</button>
+                    </form>
                 </div>
             </div>
         </div>

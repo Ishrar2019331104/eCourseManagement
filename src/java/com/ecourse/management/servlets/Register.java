@@ -36,42 +36,33 @@ public class Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           
-            
+
             // fetch all form data in this servlet
-            
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            
-            // hash the password
-            
             String user_role = request.getParameter("user_role");
             String first_name = request.getParameter("first_name");
             String last_name = request.getParameter("last_name");
             String email = request.getParameter("email");
             String phone_number = request.getParameter("phone_number");
             String address = request.getParameter("address");
-            
+
             // create a user object with this information
-            
-            User user = new User(username,password,user_role,first_name,last_name,email,phone_number,address);
-            
+            User user = new User(username, password, user_role, first_name, last_name, email, phone_number, address);
+
             // save to database using UserDao
-            
             UserDao dao = new UserDao(ConnectionProvider.getConnection());
+
 
             if(dao.saveUser(user)) {
                 // data is saved
                 out.println("done");
             } else {
-                
-                // username taken.
+
+                // username or email already taken
                 out.println("error");
             }
-            
-            
-            
-         
+
         }
     }
 

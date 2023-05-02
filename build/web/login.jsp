@@ -73,10 +73,12 @@
                                         </select>
                                     </div>
 
-                                    <button type="submit" class="btn btn-dark">Submit</button>
-
+                                    <button type="submit" class="btn btn-success btn-block">Log In</button>
+                                    
+                                    <br>
+                                    
                                     <p>
-                                        Not a member yet? <a href="register.jsp" class="badge badge-secondary">Sign Up</a>
+                                        Not a member yet? <a href="register.jsp" class="badge badge-pill badge-secondary">Sign Up</a>
 
                                     </p>
                                 </form>

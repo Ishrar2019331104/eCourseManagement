@@ -4,10 +4,14 @@
  */
 package com.ecourse.management.servlets;
 
-import com.ecourse.management.entities.Message;
+import com.ecourse.management.dao.EnrolledCoursesDao;
+import com.ecourse.management.entities.EnrolledCourses;
+import com.ecourse.management.entities.User;
+import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author ishra
  */
-public class Logout extends HttpServlet {
+@MultipartConfig
+public class CourseRegistration extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +38,45 @@ public class Logout extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           
             
-            // removing user from session
-            
+            // fetch all form data
+            String courseCode = request.getParameter("courseCode");
+            String courseTitle = request.getParameter("courseTitle");
+
             HttpSession session = request.getSession();
-            session.removeAttribute("currentUser");
+            User user = (User) session.getAttribute("currentUser");
+
+            String username = user.getUsername();
+
+            if (username == null) {
+                out.println("notloggedin");
+            } else {
+                
+                // crate enrolledCourses object
+                
+                EnrolledCourses enrolledCourses = new EnrolledCourses(courseCode, courseTitle, username);
+                
+
+                // create enrolledCoursesDao object
+                
+                EnrolledCoursesDao dao = new EnrolledCoursesDao(ConnectionProvider.getConnection());
+                
+                // save
+                
+                if(dao.saveEnrolledCourses(enrolledCourses).equals("Registration successful")) {
+                
+                    out.println("done");
+                } else if(dao.saveEnrolledCourses(enrolledCourses).equals("Course title doesn't match the one in the course table for course code")){
+                
+                    out.println("nomatch");
+                }
+                else {
+                
+                    out.println("error"); // you have already registered for this course
+                }
+            }
+
             
-            Message m = new Message("You have been successfully logged out.","success","alert-success");
-            
-            session.setAttribute("msg", m);
-            
-            response.sendRedirect("login.jsp");
-            
-           
         }
     }
 

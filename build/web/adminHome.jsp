@@ -35,12 +35,10 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about.jsp"><span class="fa fa-info-circle"></span>  About Us <span class="sr-only">(current)</span></a>
-                    </li>
+                   
 
                 </ul>
-
+                
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item active">
                         <a class="nav-link" href="adminHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
@@ -57,7 +55,7 @@
         </nav>
         <!--end of navbar-->
 
-
+        <!--main-->
 
         <div class="container">
             <div class="row justify-content-center align-items-center" style="height: 80vh;">
