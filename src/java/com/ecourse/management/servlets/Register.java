@@ -58,7 +58,7 @@ public class Register extends HttpServlet {
                 out.println("done");
             } else {
 
-                // username taken.
+                // username or email already taken
                 out.println("error");
             }
 

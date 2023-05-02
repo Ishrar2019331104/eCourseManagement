@@ -206,7 +206,7 @@
                         $("#assign-loader").hide();
                         if (data.trim() === 'done')
                         {
-                            swal("Course assigned to teacher successfully!", {
+                            swal("Teacher assigned to course successfully!", {
                                 icon: "success",
                                 buttons: {
                                     cancel: "Go to Home",
@@ -231,9 +231,9 @@
                                         }
                                     });
                         } else if (data.trim() === 'nomatch') {
-                            swal("Course code doesnt match with the title", "Try again.", "error");
+                            swal("The course code you selected does not match the course title.", "Please double-check and try again.", "error");
                         } else {
-                            swal("Course is already assigned", "Try again.", "error");
+                            swal("This course is already assigned to a teacher.", "Please select a different course to assign.", "error");
                         }
 
 

@@ -27,7 +27,7 @@ public class UserDao {
         try {
 
             // user -> database
-            // query
+            
             String query = "insert into user(username, password, user_role, first_name, last_name, email, phone_number, address) values (?,?,?,?,?,?,?,?)";
 
             PreparedStatement pstmt = this.con.prepareStatement(query);

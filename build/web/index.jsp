@@ -23,7 +23,7 @@
 
         <style>
             body {
-                background-image: url("img/index.jpg");
+                background-image: url("img/background_image.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }

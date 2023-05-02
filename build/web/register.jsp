@@ -106,7 +106,7 @@
                                 <br>
 
                                 <p>
-                                    Already a member? <a href="login.jsp" class="badge badge-secondary">Sign In</a>
+                                    Already a member? <a href="login.jsp" class="badge badge-secondary badge-pill">Sign In</a>
 
                                 </p>
                             </form>

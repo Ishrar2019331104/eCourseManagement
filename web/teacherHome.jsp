@@ -62,7 +62,7 @@
                 <div class="col-md-6 text-center">
                     <h3 class="display-4">eCourseManagement</h3>
                     <br>
-                    <a href="#"class="btn btn-outline-dark btn-lg"><span class="fa fa-bookmark"></span> My Assigned Courses</a>
+                    <a href="assignedCourses.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-bookmark"></span> My Assigned Courses</a>
                 </div>
             </div>
         </div>

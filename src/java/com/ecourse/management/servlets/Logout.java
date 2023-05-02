@@ -33,12 +33,9 @@ public class Logout extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Logout</title>");            
-            out.println("</head>");
-            out.println("<body>");
+           
+            
+            // removing user from session
             
             HttpSession session = request.getSession();
             session.removeAttribute("currentUser");
@@ -49,8 +46,7 @@ public class Logout extends HttpServlet {
             
             response.sendRedirect("login.jsp");
             
-            out.println("</body>");
-            out.println("</html>");
+           
         }
     }
 

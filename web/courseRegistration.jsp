@@ -148,7 +148,7 @@
                         $("#enrolledcourses-loader").hide();
                         if (data.trim() === 'done')
                         {
-                            swal("Course registration successful!", {
+                            swal("CCourse registration complete!", {
                                 icon: "success",
                                 buttons: {
                                     cancel: "Go to Home",
@@ -173,12 +173,12 @@
                                         }
                                     });
                         } else if (data.trim() === 'nomatch') {
-                            swal("Course code doesnt match with the title", "Try again.", "error");
+                            swal("The course code you selected does not match the course title.", "Please double-check and try again.", "error");
                         } else if (data.trim()==='notloggedin') {
                             swal("Thats an error", "Please log in again.", "error");
                             
                         } else {
-                            swal("You have already registered for this course", "Try again.", "error");
+                            swal("You have already registered for this course.", "Please select a different course to register.", "error");
                         }
 
 

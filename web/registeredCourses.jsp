@@ -61,12 +61,16 @@
         </nav>
         <!--end of navbar-->
 
-
+        <!--main-->
+        
         <div class="container">
             <div class="row justify-content-center pt-4" style="height: 80vh;">
                 <div class="col-md-6 text-center">
                     <h3 class="display-4">My Registered Courses</h3>
                     <br>
+                    
+                    <!--table displaying list of registered courses-->
+                    
                     <table class="table table-hover">
 
                         <thead>
