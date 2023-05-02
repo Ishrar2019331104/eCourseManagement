@@ -4,23 +4,23 @@
  */
 package com.ecourse.management.servlets;
 
-import com.ecourse.management.dao.UserDao;
 import com.ecourse.management.entities.User;
 import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ishra
  */
-@MultipartConfig
-public class Register extends HttpServlet {
+public class RegisteredCourses extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,32 +36,37 @@ public class Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RegisteredCourses</title>");
+            out.println("</head>");
+            out.println("<body>");
 
-            // fetch all form data in this servlet
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String user_role = request.getParameter("user_role");
-            String first_name = request.getParameter("first_name");
-            String last_name = request.getParameter("last_name");
-            String email = request.getParameter("email");
-            String phone_number = request.getParameter("phone_number");
-            String address = request.getParameter("address");
+            try {
 
-            // create a user object with this information
-            User user = new User(username, password, user_role, first_name, last_name, email, phone_number, address);
+                Connection con = ConnectionProvider.getConnection();
+                HttpSession session = request.getSession();
 
-            // save to database using UserDao
-            UserDao dao = new UserDao(ConnectionProvider.getConnection());
+                User user = (User) session.getAttribute("currentUser");
 
-            if (dao.saveUser(user)) {
-                // data is saved
-                out.println("done");
-            } else {
+                String username = user.getUsername();
+                 // querying the courses of a student
+                String query = String.format("SELECT * FROM enrolledcourses, course where enrolledcourses.courseCode = course.courseCode and username = '%s'", username);
 
-                // username taken.
-                out.println("error");
+                
+                ResultSet data = con.createStatement().executeQuery(query);
+                
+                request.setAttribute("tableData", data);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("registeredCourses.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (Exception e) {
+
             }
 
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

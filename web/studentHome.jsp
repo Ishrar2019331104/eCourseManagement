@@ -36,7 +36,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                   
+
 
                 </ul>
 
@@ -64,7 +64,9 @@
                     <h3 class="display-4">eCourseManagement</h3>
                     <br>
                     <a href="courseRegistration.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-pencil-square-o"></span> Course Registration</a>
-                    <a href="registeredCourses.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-book"></span> Registered Courses</a>
+                    <form action="RegisteredCourses" method="POST" style="display: inline;">
+                        <button class="btn btn-outline-dark btn-lg"><span class="fa fa-book"></span> Registered Courses</button>
+                    </form>
                 </div>
             </div>
         </div>

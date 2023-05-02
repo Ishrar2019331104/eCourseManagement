@@ -39,31 +39,41 @@
                         </div>
                         <div class="card-body">
                             <form id="reg-form" action="Register" method="POST">
+                                
+                                
+                                <!--username-->
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                                    <input required type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
                                 </div>
-                                <div class="form-row">
+                                
+                                
+                                <div class="form-row"> 
+                                    <!--firstname-->
                                     <div class="form-group col-md-6">
                                         <label for="firstName">First Name</label>
-                                        <input name="first_name" type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                                        <input required name="first_name" type="text" class="form-control" id="firstName" placeholder="Enter first name">
                                     </div>
+                                    <!--lastname-->
                                     <div class="form-group col-md-6">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control" name="last_name" id="lastName" placeholder="Enter last name">
+                                        <input required type="text" class="form-control" name="last_name" id="lastName" placeholder="Enter last name">
                                     </div>
                                 </div>
+                                <!--email-->
                                 <div class="form-group">
                                     <label for="email">Email address</label>
-                                    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input required name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                                 </div>
+                                <!--password-->
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+                                    <input required name="password" type="password" class="form-control" id="password" placeholder="Enter Password">
                                 </div>
+                                <!--user_role-->
                                 <div class="form-group">
                                     <label for="role">Select Role</label>
-                                    <select class="form-control" id="role" name="user_role">
+                                    <select required class="form-control" id="role" name="user_role">
                                         <option disabled selected>Select Role</option>
                                         <option value="student">Student</option>
                                         <option value="teacher">Teacher</option>
@@ -71,23 +81,29 @@
 
                                     </select>
                                 </div>
+                                <!--phone_number-->
                                 <div class="form-group">
                                     <label for="phoneNumber">Phone Number</label>
-                                    <input type="text" name = "phone_number" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Enter phone number">
+                                    <input required type="text" name = "phone_number" class="form-control" id="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Enter phone number">
                                 </div>
-
+                                <!--address-->
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <input type="text" name = "address" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter phone number">
+                                    <input required type="text" name = "address" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter phone number">
                                 </div>
-
+                                
+                                <!--loader-->
+                                
+                                
                                 <div class="container text-center" id="loader" style="display:none;">
                                     <span class="fa fa-spinner fa-4x fa-spin"></span>
                                     <h4>Please wait</h4>
 
 
                                 </div>
-                                <button id="register-btn"type="submit" class="btn btn-primary bg-dark">Submit</button>
+                                <br>
+                                <button id="register-btn"type="submit" class="btn btn-success btn-block">Register</button>
+                                <br>
 
                                 <p>
                                     Already a member? <a href="login.jsp" class="badge badge-secondary">Sign In</a>
@@ -136,8 +152,8 @@
                             if (data.trim() === 'done')
                             {
                                 swal({
-                                    title: "Success!",
-                                    text: "Registration is complete!",
+                                    title: "Congratulation!",
+                                    text: "Your registration is now complete.",
                                     icon: "success",
                                     button: "Sign In Now",
 
@@ -145,7 +161,7 @@
                                     window.location = "login.jsp"
                                 });
                             } else {
-                                swal("You are already registered", "Try again with a different username and email.", "error");
+                                swal("It seems like you have already registered.", "Please sign in to access your account.", "error");
                             }
                         },
                         error: function (jqXHR, textStatus, errorThrown) {

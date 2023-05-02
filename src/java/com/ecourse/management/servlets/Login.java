@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
             // authenticating from UserDao
             
             UserDao dao = new UserDao(ConnectionProvider.getConnection());
-            User user = dao.getUserByUsernameAndPassword(username, password);
+            User user = dao.getUserByUsernameAndPassword(username, password, user_role);
             
             
            if(user==null){

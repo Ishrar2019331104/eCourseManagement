@@ -52,16 +52,17 @@ public class UserDao {
     }
 
     // method to get user by username and password
-    public User getUserByUsernameAndPassword(String username, String password) {
+    public User getUserByUsernameAndPassword(String username, String password, String user_role) {
         User user = null;
 
         try {
 
-            String query = "select * from user where username =? and password =?";
+            String query = "select * from user where username =? and password =? and user_role = ?";
 
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, username);
             pstmt.setString(2, password);
+            pstmt.setString(3, user_role);
 
             // firing the query
             ResultSet set = pstmt.executeQuery();

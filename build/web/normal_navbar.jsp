@@ -14,10 +14,10 @@
 
         <ul class="navbar-nav mr-right">
            <li class="nav-item active">
-                <a class="nav-link" href="login.jsp"><span class="fa fa-sign-in"></span> Log In <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="login.jsp"><span class="fa fa-sign-in"></span> Sign In <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="register.jsp"><span class="fa fa-user-plus"></span> Join for Free</a>
+                <a class="nav-link" href="register.jsp"><span class="fa fa-user-plus"></span> Sign Up </a>
 
             </li>
             
