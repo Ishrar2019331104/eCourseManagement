@@ -59,7 +59,7 @@ public class Register extends HttpServlet {
             // save to database using UserDao
             
             UserDao dao = new UserDao(ConnectionProvider.getConnection());
-            
+
             if(dao.saveUser(user)) {
                 // data is saved
                 out.println("done");

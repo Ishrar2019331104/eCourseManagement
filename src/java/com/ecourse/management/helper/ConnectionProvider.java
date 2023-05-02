@@ -24,6 +24,7 @@ public class ConnectionProvider {
 
                 // establishing connection
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecoursemanagement", "root", "ish19rar");
+                System.out.println(con);
 
             }
         } catch (Exception e) {
