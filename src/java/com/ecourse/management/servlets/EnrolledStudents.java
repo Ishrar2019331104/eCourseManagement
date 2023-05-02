@@ -4,23 +4,24 @@
  */
 package com.ecourse.management.servlets;
 
-import com.ecourse.management.entities.User;
+
 import com.ecourse.management.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ishra
  */
-public class RegisteredCourses extends HttpServlet {
+public class EnrolledStudents extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,24 +37,22 @@ public class RegisteredCourses extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+           
 
             try {
 
                 Connection con = ConnectionProvider.getConnection();
                 HttpSession session = request.getSession();
 
-                User user = (User) session.getAttribute("currentUser");
-
-                String username = user.getUsername();
-                 // querying the courses of a student
-                String query = String.format("SELECT * FROM enrolledcourses, course where enrolledcourses.courseCode = course.courseCode and username = '%s'", username);
-
+                String courseCode = request.getParameter("courseCode");
                 
+                // querying the assigned courses of a teacher
+                String query = String.format("SELECT * FROM enrolledcourses, user where user.username = enrolledCourses.username and courseCode = '%s'", courseCode);
+
                 ResultSet data = con.createStatement().executeQuery(query);
-                
+
                 request.setAttribute("tableData", data);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("registeredCourses.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("enrolledStudents.jsp");
                 dispatcher.forward(request, response);
 
             } catch (Exception e) {

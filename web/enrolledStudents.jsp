@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registered Courses</title>
+        <title>Enrolled Students</title>
         <!-- css -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -34,7 +34,7 @@
 
         <!--navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="studentHome.jsp"><span class="fa fa-graduation-cap"></span> eCourseManagement</a>
+            <a class="navbar-brand" href="assignedCourses.jsp"><span class="fa fa-graduation-cap"></span> eCourseManagement</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +47,7 @@
 
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="studentHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
+                        <a class="nav-link" href="assignedCourses.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
 
                     </li>
                     <li class="nav-item active">
@@ -62,22 +62,22 @@
         <!--end of navbar-->
 
         <!--main-->
-        
+
         <div class="container">
             <div class="row justify-content-center pt-4" style="height: 80vh;">
                 <div class="col-md-6 text-center">
-                    <h3 class="display-4">My Registered Courses</h3>
+                    <h3 class="display-4">Enrolled Students</h3>
                     <br>
-                    
-                    <!--table displaying list of registered courses-->
-                    
+
+                    <!--table displaying list of assigned courses-->
+
                     <table class="table table-hover">
 
                         <thead>
                             <tr>
-                                <th>Course Code</th>
-                                <th>Course Title</th>
-                                <th>Credit</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email </th>
                             </tr>
                         </thead>
 
@@ -86,21 +86,24 @@
                             <tr>
 
                                 <td>
-                                    <% out.print(rs.getString("courseCode")); %>
+                                    <% out.print(rs.getString("first_name") + " " + rs.getString("last_name") ); %>
                                 </td>
                                 <td>
-                                    <% out.print(rs.getString("courseTitle")); %>
+                                    <% out.print(rs.getString("username")); %>
                                 </td>
+                                
                                 <td>
-                                    <% out.print(rs.getString("credit")); %>
+                                    <% out.print(rs.getString("email")); %>
                                 </td>
+                                
+
 
                             </tr>
                             <% }%>
                         </tbody>
                     </table>
 
-                    <a href="studentHome.jsp" class="btn btn-primary bg-dark">Go to Home</a>
+                    <a href="teacherHome.jsp" class="btn btn-primary bg-dark">Go to Home</a>
                 </div>
             </div>
         </div>

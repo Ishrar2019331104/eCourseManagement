@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ishra
  */
-public class RegisteredCourses extends HttpServlet {
+public class AssignedCourses extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,14 +46,14 @@ public class RegisteredCourses extends HttpServlet {
                 User user = (User) session.getAttribute("currentUser");
 
                 String username = user.getUsername();
-                 // querying the courses of a student
-                String query = String.format("SELECT * FROM enrolledcourses, course where enrolledcourses.courseCode = course.courseCode and username = '%s'", username);
+                 // querying the assigned courses of a teacher
+                String query = String.format("SELECT * FROM assign, user where assign.teacherName = user.username and teacherName = '%s'", username);
 
                 
                 ResultSet data = con.createStatement().executeQuery(query);
                 
                 request.setAttribute("tableData", data);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("registeredCourses.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("assignedCourses.jsp");
                 dispatcher.forward(request, response);
 
             } catch (Exception e) {

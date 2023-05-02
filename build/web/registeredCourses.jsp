@@ -47,7 +47,7 @@
 
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="adminHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
+                        <a class="nav-link" href="studentHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
 
                     </li>
                     <li class="nav-item active">

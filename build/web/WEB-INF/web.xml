@@ -28,6 +28,14 @@
         <servlet-name>RegisteredCourses</servlet-name>
         <servlet-class>com.ecourse.management.servlets.RegisteredCourses</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AssignedCourses</servlet-name>
+        <servlet-class>com.ecourse.management.servlets.AssignedCourses</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EnrolledStudents</servlet-name>
+        <servlet-class>com.ecourse.management.servlets.EnrolledStudents</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>RegisteredCourses</servlet-name>
         <url-pattern>/RegisteredCourses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AssignedCourses</servlet-name>
+        <url-pattern>/AssignedCourses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnrolledStudents</servlet-name>
+        <url-pattern>/EnrolledStudents</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

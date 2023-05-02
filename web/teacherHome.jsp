@@ -35,7 +35,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                   
+
 
                 </ul>
 
@@ -62,7 +62,9 @@
                 <div class="col-md-6 text-center">
                     <h3 class="display-4">eCourseManagement</h3>
                     <br>
-                    <a href="assignedCourses.jsp"class="btn btn-outline-dark btn-lg"><span class="fa fa-bookmark"></span> My Assigned Courses</a>
+                    <form action="AssignedCourses" method="POST">
+                        <button class="btn btn-outline-dark btn-lg"><span class="fa fa-bookmark"></span> My Assigned Courses</button>
+                    </form>
                 </div>
             </div>
         </div>
