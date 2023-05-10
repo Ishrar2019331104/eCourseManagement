@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 public class AssignedCourses extends HttpServlet {
 
@@ -47,7 +47,7 @@ public class AssignedCourses extends HttpServlet {
 
                 String username = user.getUsername();
                  // querying the assigned courses of a teacher
-                String query = String.format("SELECT * FROM assign, user where assign.teacherName = user.username and teacherName = '%s'", username);
+                String query = String.format("SELECT assign.*, user.*, course.credit FROM assign, user, course where assign.teacherName = user.username and assign.courseCode = course.courseCode and teacherName = '%s'", username);
 
                 
                 ResultSet data = con.createStatement().executeQuery(query);

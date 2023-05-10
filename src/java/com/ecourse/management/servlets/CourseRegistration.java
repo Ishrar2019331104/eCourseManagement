@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 @MultipartConfig
 public class CourseRegistration extends HttpServlet {

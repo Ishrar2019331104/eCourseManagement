@@ -1,7 +1,7 @@
 <%-- 
-    Document   : registeredCourses
-    Created on : May 2, 2023, 3:25:45 AM
-    Author     : ishra
+    Document   : assignedCourses
+    Created on : May 2, 2023, 3:16:05 AM
+    Author     : Fahad
 --%>
 
 <%@page import="com.ecourse.management.entities.User"%>
@@ -77,6 +77,7 @@
                             <tr>
                                 <th>Course Code</th>
                                 <th>Course Title</th>
+                                <th>Credit</th>
                                 <th>Enrolled Students</th>
                             </tr>
                         </thead>
@@ -92,8 +93,12 @@
                                     <% out.print(rs.getString("courseTitle")); %>
                                 </td>
                                 <td>
+                                    <% out.print(rs.getString("credit"));%>
+                                </td>
+
+                                <td>
                                     <form action="EnrolledStudents" method="POST">
-                                        <input type="hidden" name="courseCode" value="<%= rs.getString("courseCode") %>">
+                                        <input type="hidden" name="courseCode" value="<%= rs.getString("courseCode")%>">
                                         <button class="btn btn-outline-dark">View</button>
                                     </form>
 

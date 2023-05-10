@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 @MultipartConfig
 public class AssignCourse extends HttpServlet {

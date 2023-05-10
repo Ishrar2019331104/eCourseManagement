@@ -6,7 +6,7 @@ package com.ecourse.management.entities;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 public class Message {
     

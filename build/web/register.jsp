@@ -1,7 +1,7 @@
 <%-- 
     Document   : register
     Created on : Apr 29, 2023, 12:44:33 AM
-    Author     : ishra
+    Author     : ishrar
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +16,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .card-shadow {
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+            }
 
+        </style>
     </head>
     <body>
        
@@ -32,7 +37,7 @@
 
                 <div class="col-md-6 offset-md-3">
 
-                    <div class="card">
+                    <div class="card card-shadow">
                         <div class="card-header bg-dark text-white text-center">
                             <span style="display:block;" class="fa fa-user-plus fa-3x"></span>
                             Register here

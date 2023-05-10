@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminHome
     Created on : Apr 29, 2023, 9:38:55 PM
-    Author     : ishra
+    Author     : ishrar
 --%>
 <%@page import="com.ecourse.management.entities.User"%>
 <%@page errorPage="error_page.jsp" %>
@@ -10,6 +10,10 @@
 
     if (user == null) {
         response.sendRedirect("login.jsp");
+    }
+
+    if (user.getUser_role().equals("student") || user.getUser_role().equals("teacher")) {
+        response.sendRedirect("accessDenied.jsp");
     }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,10 +39,10 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                   
+
 
                 </ul>
-                
+
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item active">
                         <a class="nav-link" href="adminHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>

@@ -6,7 +6,7 @@ package com.ecourse.management.entities;
 import java.sql.*;
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 public class User {
     private int user_id;

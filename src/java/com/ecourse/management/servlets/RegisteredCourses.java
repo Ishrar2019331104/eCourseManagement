@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 public class RegisteredCourses extends HttpServlet {
 

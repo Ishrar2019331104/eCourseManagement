@@ -1,7 +1,7 @@
 <%-- 
     Document   : registeredCourses
     Created on : May 2, 2023, 3:25:45 AM
-    Author     : ishra
+    Author     : ishrar
 --%>
 
 <%@page import="com.ecourse.management.entities.User"%>

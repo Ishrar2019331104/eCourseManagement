@@ -1,14 +1,25 @@
 <%-- 
     Document   : register
     Created on : Apr 29, 2023, 12:44:33 AM
-    Author     : ishra
+    Author     : ishrar
 --%>
 
+<%@page import="com.ecourse.management.entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import= "com.ecourse.management.helper.ConnectionProvider" %>
 <%@page import="java.sql.*" %>
 
+<%
+    User user = (User) session.getAttribute("currentUser");
 
+    if (user == null) {
+        response.sendRedirect("login.jsp");
+    }
+
+    else if (user.getUser_role().equals("student") || user.getUser_role().equals("teacher")) {
+        response.sendRedirect("accessDenied.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +30,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+            .card-shadow {
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+            }
+
+        </style>
         
     </head>
     <body>
@@ -33,7 +51,7 @@
 
                 <div class="col-md-6 offset-md-3">
 
-                    <div class="card">
+                    <div class="card card-shadow">
                         <div class="card-header bg-dark text-white text-center">
                             <span style="display:block;" class="fa fa-upload fa-3x"></span>
                             Assign Teacher

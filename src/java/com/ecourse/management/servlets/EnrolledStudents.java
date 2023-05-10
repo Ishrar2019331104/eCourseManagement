@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ishra
+ * @author ishrar
  */
 public class EnrolledStudents extends HttpServlet {
 

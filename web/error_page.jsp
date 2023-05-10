@@ -1,7 +1,7 @@
 <%-- 
     Document   : error_page
     Created on : Apr 29, 2023, 8:25:29 PM
-    Author     : ishra
+    Author     : ishrar
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,7 +28,9 @@
                     <img class="img-fluid" src="img/error.png" alt="" height="200px" width="200px"/>
                     <h1 class="display-4">Uh oh!</h1>
                     <p>Something went wrong. Please try again.</p>
+                    <br>
                     <%= exception %>
+                    <br>
                     <a href="index.jsp" class="btn-dark btn-lg mt-3">Home</a>
                 </div>
             </div>

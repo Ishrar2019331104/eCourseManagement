@@ -1,7 +1,7 @@
 <%-- 
     Document   : login
     Created on : Apr 29, 2023, 12:04:46 AM
-    Author     : ishra
+    Author     : ishrar
 --%>
 
 <%@page import="com.ecourse.management.entities.Message"%>
@@ -15,7 +15,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .card-shadow {
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+            }
 
+        </style>
     </head>
     <body>
 
@@ -27,7 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
-                        <div class="card">
+                        <div class="card card-shadow">
 
                             <div class="card-header bg-dark text-center text-white">
                                 <span style="display:block;" class="fa fa-user-circle fa-3x"></span>
@@ -41,11 +46,11 @@
                                 if (m != null) {
                             %>
 
-                            <div class="alert <%= m.getCssClass() %>" role="alert">
-                                <%= m.getContent()  %>
+                            <div class="alert <%= m.getCssClass()%>" role="alert">
+                                <%= m.getContent()%>
                             </div>
                             <%
-                                session.removeAttribute("msg");
+                                    session.removeAttribute("msg");
                                 }
 
                             %>
@@ -74,9 +79,9 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-success btn-block">Log In</button>
-                                    
+
                                     <br>
-                                    
+
                                     <p>
                                         Not a member yet? <a href="register.jsp" class="badge badge-pill badge-secondary">Sign Up</a>
 

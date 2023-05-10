@@ -1,7 +1,7 @@
 <%-- 
     Document   : studentHome
     Created on : Apr 29, 2023, 9:39:17 PM
-    Author     : ishra
+    Author     : ishrar
 --%>
 <%@page import="com.ecourse.management.entities.User"%>
 <%@page errorPage="error_page.jsp" %>
@@ -10,6 +10,9 @@
 
     if (user == null) {
         response.sendRedirect("login.jsp");
+    }
+    if(user.getUser_role().equals("teacher") || user.getUser_role().equals("admin")) {
+        response.sendRedirect("accessDenied.jsp");
     }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

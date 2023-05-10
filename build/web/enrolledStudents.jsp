@@ -1,8 +1,9 @@
 <%-- 
-    Document   : registeredCourses
-    Created on : May 2, 2023, 3:25:45 AM
-    Author     : ishra
+    Document   : enrolledCourse
+    Created on : May 2, 2023, 3:16:05 AM
+    Author     : Fahad
 --%>
+
 
 <%@page import="com.ecourse.management.entities.User"%>
 <%@page import="java.sql.ResultSet" %>
@@ -34,7 +35,7 @@
 
         <!--navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="assignedCourses.jsp"><span class="fa fa-graduation-cap"></span> eCourseManagement</a>
+            <a class="navbar-brand" href="teacherHome.jsp"><span class="fa fa-graduation-cap"></span> eCourseManagement</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -103,7 +104,9 @@
                         </tbody>
                     </table>
 
-                    <a href="teacherHome.jsp" class="btn btn-primary bg-dark">Go to Home</a>
+                    <form action="AssignedCourses" method="POST">
+                        <button class="btn btn-outline-dark btn">Go back</button>
+                    </form>
                 </div>
             </div>
         </div>
