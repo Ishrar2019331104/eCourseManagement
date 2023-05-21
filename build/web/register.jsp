@@ -157,7 +157,7 @@
                             if (data.trim() === 'done')
                             {
                                 swal({
-                                    title: "Congratulation!",
+                                    title: "Congratulations!",
                                     text: "Your registration is now complete.",
                                     icon: "success",
                                     button: "Sign In Now",

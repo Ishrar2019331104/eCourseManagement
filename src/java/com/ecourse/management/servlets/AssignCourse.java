@@ -14,7 +14,11 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * Servlet implementation class AssignCourse
+ * 
+ * This servlet handles the assignment of a course to a teacher.
+ */
 /**
  *
  * @author ishrar

@@ -78,6 +78,7 @@
                                 <th>Course Code</th>
                                 <th>Course Title</th>
                                 <th>Credit</th>
+                                <th>Assigned Teacher</th>
                             </tr>
                         </thead>
 
@@ -93,6 +94,9 @@
                                 </td>
                                 <td>
                                     <% out.print(rs.getString("credit")); %>
+                                </td>
+                                <td>
+                                    <% out.print(rs.getString("teacherEmail")); %>
                                 </td>
 
                             </tr>

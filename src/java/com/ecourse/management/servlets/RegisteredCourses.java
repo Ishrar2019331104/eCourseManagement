@@ -47,8 +47,11 @@ public class RegisteredCourses extends HttpServlet {
 
                 String username = user.getUsername();
                  // querying the courses of a student
-                String query = String.format("SELECT * FROM enrolledcourses, course where enrolledcourses.courseCode = course.courseCode and username = '%s'", username);
-
+                String query = String.format("SELECT assign.courseCode, assign.courseTitle, course.credit, assign.teacherEmail " +
+                             "FROM assign " +
+                             "JOIN course ON assign.courseCode = course.courseCode " +
+                             "JOIN enrolledcourses ON assign.courseCode = enrolledcourses.courseCode " +
+                             "WHERE enrolledcourses.username = '%s'", username);
                 
                 ResultSet data = con.createStatement().executeQuery(query);
                 

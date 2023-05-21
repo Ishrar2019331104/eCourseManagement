@@ -10,17 +10,18 @@
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/normal_navbar.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/assignCourse.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/AssignCourse.java</file>
-            <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/test.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/Logout.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/helper/ConnectionProvider.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/entities/Message.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/studentHome.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/accessDenied.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/entities/EnrolledCourses.java</file>
+            <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/EnrolledStudents.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/enrolledStudents.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/courseRegistration.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/teacherHome.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/entities/User.java</file>
+            <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/RegisteredCourses.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/index.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/dao/AssignDao.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/img/background_image.jpg</file>
