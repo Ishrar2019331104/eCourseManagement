@@ -8,6 +8,9 @@ import java.sql.*;
  *
  * @author ishrar
  */
+/*
+Assign class represents a course assignment with course code, title, teacher name, and teacher email.
+*/
 public class Assign {
     
     private String courseCode;

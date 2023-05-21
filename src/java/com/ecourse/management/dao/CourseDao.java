@@ -5,7 +5,9 @@
 package com.ecourse.management.dao;
 import com.ecourse.management.entities.Course;
 import java.sql.*;
-
+/*
+CourseDao provides methods for adding courses to the database.
+*/
 /**
  *
  * @author ishrar

@@ -14,7 +14,12 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * Servlet implementation class Register
+ * 
+ * This servlet handles registration of an user
+ */
+/**
 /**
  *
  * @author ishrar

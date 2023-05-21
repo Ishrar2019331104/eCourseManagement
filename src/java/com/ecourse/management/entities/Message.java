@@ -8,6 +8,9 @@ package com.ecourse.management.entities;
  *
  * @author ishrar
  */
+/*
+Message class represents a message with content, type, and CSS class.
+*/
 public class Message {
     
     private String content;

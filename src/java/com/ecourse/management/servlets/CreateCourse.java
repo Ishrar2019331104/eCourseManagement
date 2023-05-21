@@ -14,7 +14,12 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * Servlet implementation class CreateCourse
+ * 
+ * This servlet handles the creation of a course by the admin.
+ */
+/**
 /**
  *
  * @author ishrar

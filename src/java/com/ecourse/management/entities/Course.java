@@ -2,6 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+/*
+Assign class represents a course with course code, title, credit, year, and semester.
+*/
 package com.ecourse.management.entities;
 import java.sql.*;
 /**

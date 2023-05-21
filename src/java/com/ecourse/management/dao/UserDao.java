@@ -6,7 +6,9 @@ package com.ecourse.management.dao;
 
 import com.ecourse.management.entities.User;
 import java.sql.*;
-
+/*
+AssignDao provides methods for adding user to the database.
+*/
 /**
  *
  * @author ishrar

@@ -4,6 +4,9 @@
  */
 package com.ecourse.management.entities;
 import java.sql.*;
+/*
+Assign class represents a course enrollment with course code, username of the student.
+*/
 /**
  *
  * @author ishrar

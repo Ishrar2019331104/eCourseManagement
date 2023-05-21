@@ -12,7 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * Servlet implementation class Logout
+ * 
+ * This servlet handles logout from the session
+ */
+/**
 /**
  *
  * @author ishrar

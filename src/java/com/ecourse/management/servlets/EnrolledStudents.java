@@ -16,7 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * Servlet implementation class EnrolledStudents
+ * 
+ * This servlet handles the display of list of students for a specific course.
+ */
+/**
 /**
  *
  * @author ishrar

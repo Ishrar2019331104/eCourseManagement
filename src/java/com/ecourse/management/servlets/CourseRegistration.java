@@ -16,7 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * Servlet implementation class CourseRegistration
+ * 
+ * This servlet handles the registration of a course for a student.
+ */
+/**
 /**
  *
  * @author ishrar

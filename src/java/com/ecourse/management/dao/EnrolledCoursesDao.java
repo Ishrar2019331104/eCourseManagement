@@ -8,7 +8,9 @@ import com.ecourse.management.entities.EnrolledCourses;
 import java.sql.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
+/*
+EnrolledCourses provides methods for enrollment of courses to the database.
+*/
 /**
  *
  * @author ishrar

@@ -6,7 +6,9 @@ package com.ecourse.management.dao;
 
 import com.ecourse.management.entities.Assign;
 import java.sql.*;
-
+/*
+AssignDao provides methods for assigning courses to the database.
+*/
 /**
  *
  * @author ishrar

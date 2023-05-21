@@ -15,7 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import javax.servlet.http.HttpSession;
-
+/**
+ * Servlet implementation class AssignedCourses
+ * 
+ * This servlet handles the display of courses for a teacher.
+ */
+/**
 /**
  *
  * @author ishrar

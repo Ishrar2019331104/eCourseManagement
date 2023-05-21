@@ -8,6 +8,9 @@ import java.sql.*;
  *
  * @author ishrar
  */
+/*
+The Message class represents a user with its user_id, username, password, user_role, first_name, last_name, email, phone_number, address
+*/
 public class User {
     private int user_id;
     private String username;
