@@ -1,5 +1,5 @@
 <%-- 
-    Document   : register
+    Document   : assignCourse
     Created on : Apr 29, 2023, 12:44:33 AM
     Author     : ishrar
 --%>

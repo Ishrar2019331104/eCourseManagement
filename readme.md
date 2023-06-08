@@ -33,6 +33,6 @@ Follow the following steps to set up and run eCourseManagement:
     git clone https://github.com/Ishrar2019331104/eCourseManagement.git
     ```
 
-2. Set up the database using `MySQL Workbench`
+2. Set up the database using `MySQL Workbench`.
 
-3. Run on `Apache NetBeans IDE` 
+3. Run on `Apache NetBeans IDE`.
