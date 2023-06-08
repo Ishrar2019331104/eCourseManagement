@@ -14,6 +14,7 @@
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/login.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/helper/ConnectionProvider.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/entities/Message.java</file>
+            <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/Login.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/studentHome.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/accessDenied.jsp</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/entities/EnrolledCourses.java</file>
@@ -36,6 +37,7 @@
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/web/css/mystyle.css</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/CreateCourse.java</file>
             <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/dao/CourseDao.java</file>
+            <file>file:/C:/Users/ishra/OneDrive/Documents/NetBeansProjects/eCourseManagement/src/java/com/ecourse/management/servlets/Register.java</file>
         </group>
     </open-files>
 </project-private>

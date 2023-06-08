@@ -19,13 +19,15 @@
         <style>
             .card-shadow {
                 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+                
             }
+            
 
         </style>
     </head>
     <body>
-       
-        
+
+
         <!--navbar-->
 
         <%@include file="normal_navbar.jsp" %>
@@ -44,15 +46,15 @@
                         </div>
                         <div class="card-body">
                             <form id="reg-form" action="Register" method="POST">
-                                
-                                
+
+
                                 <!--username-->
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input required type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
                                 </div>
-                                
-                                
+
+
                                 <div class="form-row"> 
                                     <!--firstname-->
                                     <div class="form-group col-md-6">
@@ -96,10 +98,10 @@
                                     <label for="address">Address</label>
                                     <input required type="text" name = "address" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter phone number">
                                 </div>
-                                
+
                                 <!--loader-->
-                                
-                                
+
+
                                 <div class="container text-center" id="loader" style="display:none;">
                                     <span class="fa fa-spinner fa-4x fa-spin"></span>
                                     <h4>Please wait</h4>
