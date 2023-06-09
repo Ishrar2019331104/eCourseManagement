@@ -47,7 +47,7 @@
 
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="teacherHome.jsp"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
+                        <a class="nav-link" href="#!" data-toggle="modal" data-target="#profile-modal"><span class="fa fa-user-o"></span> <%= user.getUsername()%></a>
 
                     </li>
                     <li class="nav-item active">
@@ -60,6 +60,51 @@
             </div>
         </nav>
         <!--end of navbar-->
+        <!--profile modal-->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-white text-center">
+                        <h5 class="modal-title" id="exampleModalLabel">Profile Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+
+                            <span style="display:block;" class="fa fa-user-circle fa-4x"></span>
+                            <h5 class="modal-title" id="exampleModalLabel"><%= user.getFirst_name()%> <%= user.getLast_name()%></h5>
+                            <br>
+                            <table class="table table-sm">
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">username </th>
+                                        <td><%= user.getUsername()%></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">email</th>
+                                        <td><%= user.getEmail()%></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of profile modal-->
 
         <!--main-->
 
