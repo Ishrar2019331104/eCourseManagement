@@ -5,11 +5,15 @@ An online course management web application built using Java Servlets, JSP and M
 ## Overview
 
 **eCourseManagement** is a role-based course management system with three user types: a student, a teacher, and an admin. Each user is authenticated using username and password.
-- Admin: Is able to add new courses in the system
-and assign a particular teacher to a corresponding course.
-- Student: Is able to register for a new course and view all his/her registered courses.
-- Teacher: Is able to view his/her corresponding assigned course(s) and select a particular course, from these courses, to view the list of the
-registered students for that particular course.
+- Admin:
+  - Add new courses in the system
+  - Assign a particular teacher to a corresponding course.
+- Student: 
+  - Register for a new course
+  - View all of his/her registered courses.
+- Teacher:
+  - View his/her corresponding assigned course(s)
+  - Select a particular course, from these courses, to view the list of the registered students for that particular course.
 
 ## Technologies Used
 
@@ -17,8 +21,7 @@ registered students for that particular course.
 - MySQL
 - Bootstrap CSS
 - Apache Tomcat 9.0
-- Apache NetBeans IDE
-
+- 
 ## Setup
 
 To be able to run eCourseManagement on your machine, make sure you have the following softwares installed
