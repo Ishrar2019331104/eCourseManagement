@@ -21,7 +21,7 @@ An online course management web application built using Java Servlets, JSP and M
 - MySQL
 - Bootstrap CSS
 - Apache Tomcat 9.0
-- 
+
 ## Setup
 
 To be able to run eCourseManagement on your machine, make sure you have the following softwares installed
